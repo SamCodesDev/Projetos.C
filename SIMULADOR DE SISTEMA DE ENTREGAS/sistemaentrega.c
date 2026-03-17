@@ -118,6 +118,7 @@ int main() {
         } 
         else if (escolha == 5) {
             
+            
             printf("\n====== ACAI 500ML ======\n");
             printf("Acai cremoso com granola.\n");
             printf("Preco: R$ 18.90\n");
