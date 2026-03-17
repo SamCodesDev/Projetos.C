@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+void textobonito(int tam){
+
+    for(int i = 1; i < tam; i++){
+        printf("==");}
+    printf("=\n");
+}
+
 float taxaEntrega(float distancia) {
     return 5 + (distancia * 1.5);
 }
@@ -27,19 +34,19 @@ void mostrarPedidos(int pizza, int burger, int sushi, int batata, int acai) {
             printf("Acai 500ml: %d\n", acai);
     }
 
-    printf("====================================\n");
+    textobonito(36);
 }
 
 int main() {
     int escolha = -1;
     int opcao = -1;
-    float distancia;
+    float distancia, preco = 0.0;
 
-    int pizza = 0, burger = 0, sushi = 0, batata = 0, acai = 0;
+    int pizza = 0, burger = 0, sushi = 0, batata = 0, acai = 0, add = 0;
 
-    printf("=====================================\n");
+    textobonito(18);
     printf("        SISTEMA DE PEDIDOS\n");
-    printf("=====================================\n");
+    textobonito(18);
 
     while (escolha != 0) {
 
@@ -60,35 +67,66 @@ int main() {
         }
 
         if (escolha == 1) {
-            pizza++;
+            
             printf("\n====== PIZZA CALABRESA ======\n");
             printf("Pizza tradicional com molho de tomate,\n");
             printf("mussarela e calabresa.\n");
             printf("Preco: R$ 39.90\n");
+            printf("deseja adicionar o produto a sacola?\n 1 - SIM \n 0 - NÃO");
+            scanf("%d", &add);
+            if(add == 1){
+                pizza++;
+            preco+= 39.90;
+            }
         } 
         else if (escolha == 2) {
-            burger++;
+            
             printf("\n====== HAMBURGUER ARTESANAL ======\n");
             printf("Hamburguer 180g com queijo, alface e tomate.\n");
             printf("Preco: R$ 25.90\n");
+            printf("deseja adicionar o produto a sacola?\n 1 - SIM \n 0 - NÃO");
+            scanf("%d", &add);
+            if(add == 1){
+                burger++;
+            preco+= 25.90;
+            
+            }
         } 
         else if (escolha == 3) {
-            sushi++;
+            
             printf("\n====== SUSHI COMBO ======\n");
             printf("Combo com 20 pecas variadas.\n");
             printf("Preco: R$ 49.90\n");
+            printf("deseja adicionar o produto a sacola?\n 1 - SIM \n 0 - NÃO");
+            scanf("%d", &add);
+            if(add == 1){
+              sushi++;
+            preco+= 49.90;
+            }
         } 
         else if (escolha == 4) {
-            batata++;
+            
             printf("\n====== BATATA FRITA GRANDE ======\n");
             printf("Batata crocante com molho especial.\n");
             printf("Preco: R$ 15.90\n");
+            printf("deseja adicionar o produto a sacola?\n 1 - SIM \n 0 - NÃO");
+            scanf("%d", &add);
+            if(add == 1){
+                batata++;
+            preco+= 15.90;
+            }
         } 
         else if (escolha == 5) {
-            acai++;
+            
             printf("\n====== ACAI 500ML ======\n");
             printf("Acai cremoso com granola.\n");
             printf("Preco: R$ 18.90\n");
+            printf("deseja adicionar o produto a sacola?\n 1 - SIM \n 0 - NÃO");
+            scanf("%d", &add);
+            if(add == 1){
+               acai++;
+            preco+= 18.90;
+            }
         } 
         else {
             printf("\nOpcao invalida! Tente novamente.\n");
